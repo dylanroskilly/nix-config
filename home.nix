@@ -102,6 +102,16 @@ in
       core.editor = "code --wait";
     };
     ignores = [ ".DS_Store" ];
+    delta = {
+      enable = true;
+      options = {
+        line-numbers = true;
+        navigate = true;
+        hunk-header-style = "omit";
+        file-style = "bold blue";
+        syntax-theme = "TwoDark";
+      };
+    };
   };
 
   programs.btop = {
