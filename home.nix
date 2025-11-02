@@ -55,8 +55,6 @@ in
       # cli
       bashInteractive
       eza
-      direnv
-      dua
     ]
     ++ (if pkgs.stdenv.isLinux then [ libsecret ] else [ ]);
 
@@ -75,6 +73,11 @@ in
       theme = "eastwood";
       plugins = [ "git" ];
     };
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   programs.kitty = {
