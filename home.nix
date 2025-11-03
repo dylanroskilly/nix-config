@@ -22,11 +22,12 @@ in
     with pkgs;
     [
       # rust
-      rustc
-      cargo
-      rustfmt
-      clippy
-      rust-analyzer
+      (rust-bin.stable.latest.default.override {
+        extensions = [
+          "rust-analyzer"
+          "rust-src"
+        ];
+      })
       cargo-nextest
       cargo-insta
 
